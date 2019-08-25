@@ -1,11 +1,11 @@
 import React from 'react';
-import ListOfAllArticles from './ListOfAllArticles';
+import ArticlesList from './articles/ArticlesList';
 
 function Home() {
   return (
-    <div>
+    <div className="Home">
       <h1>Home Page</h1>
-      <ListOfAllArticles />
+      <ArticlesList />
     </div>
   );
 }

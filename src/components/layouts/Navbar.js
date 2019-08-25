@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar fixed-top">
       <a
-        href="https://twitter.com/jrowan10?lang=en"
+        href="https://twitter.com"
         target="_blank"
         rel="noopener noreferrer"
         className="text-primary "
@@ -43,9 +43,8 @@ function Navbar() {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav m-auto">
-          <li classNameName="nav-item active">
+          <li className="nav-item active">
             <div className="dropdown show">
-              <label className="text-white text-uppercase mr-2">Sort</label>
               <a
                 className="btn btn-light dropdown-toggle mr-5"
                 href="#"
@@ -56,13 +55,19 @@ function Navbar() {
                 aria-expanded="false"
               >
                 hot&nbsp;
-                <i class="fas fa-fire" />
+                <i className="fas fa-fire" />
               </a>
               {/* <!-- most popular articles/votes etc..... --> */}
 
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <Link className="dropdown-item" to="/articles?topic=cooking">
-                  Cooking
+                  Most Recent
+                </Link>
+                <Link className="dropdown-item" to="/articles?topic=cooking">
+                  Most Popular
+                </Link>
+                <Link className="dropdown-item" to="/articles?topic=cooking">
+                  Highest Rated
                 </Link>
               </div>
             </div>
@@ -70,7 +75,7 @@ function Navbar() {
           <li className="nav-item active">
             <div className="dropdown show">
               <a
-                className="btn btn-secondary dropdown-toggle mr-5"
+                className="btn btn-secondary dropdown-toggle mr-5 "
                 href="#"
                 role="button"
                 id="dropdownMenuLink"
@@ -79,7 +84,7 @@ function Navbar() {
                 aria-expanded="false"
               >
                 TECHNOLOGY&nbsp;
-                <i class="fas fa-laptop-code" />
+                <i className="fas fa-laptop-code" />
               </a>
 
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -101,17 +106,17 @@ function Navbar() {
                 aria-expanded="false"
               >
                 SPORT&nbsp;
-                <i class="fas fa-futbol" />
+                <i className="fas fa-futbol" />
               </a>
 
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <Link className="dropdown-item" to="/articles?topic=football">
+                <Link className="dropdown-item" to="/articles/topic=football">
                   Football
                 </Link>
               </div>
             </div>
           </li>
-          <li classNameName="nav-item active">
+          <li className="nav-item active">
             <div className="dropdown show">
               <a
                 className="btn btn-success dropdown-toggle mr-5"
@@ -123,12 +128,40 @@ function Navbar() {
                 aria-expanded="false"
               >
                 FOOD&nbsp;
-                <i class="fas fa-hamburger" />
+                <i className="fas fa-hamburger" />
               </a>
 
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <Link className="dropdown-item" to="/articles?topic=cooking">
+                <Link className="dropdown-item" to="/articles/topic=cooking">
                   Cooking
+                </Link>
+              </div>
+            </div>
+          </li>
+          <li className="nav-item active">
+            <div className="dropdown show">
+              <a
+                className="btn btn-danger dropdown-toggle mr-5"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                ALL TOPICS&nbsp;
+                <i class="fas fa-align-center" />
+              </a>
+
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <Link className="dropdown-item" to="/topics/cooking">
+                  Cooking
+                </Link>
+                <Link className="dropdown-item" to="/topics/coding">
+                  Coding
+                </Link>
+                <Link className="dropdown-item" to="/topics/football">
+                  Football
                 </Link>
               </div>
             </div>
@@ -138,7 +171,7 @@ function Navbar() {
           <input
             className="form-control mr-sm-2"
             type="search"
-            placeholder="Search"
+            placeholder="Search NC News"
             aria-label="Search"
           />
           <button
@@ -151,6 +184,6 @@ function Navbar() {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

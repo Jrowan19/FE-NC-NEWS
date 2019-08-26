@@ -9,6 +9,8 @@ import Footer from './components/layouts/Footer';
 import ArticlesList from './components/pages/articles/ArticlesList';
 import SingleArticle from './components/pages/articles/SingleArticle';
 import SignIn from './components/layouts/SignIn';
+import AllTopics from './components/pages/topics/AllTopics';
+import TopicCard from './components/pages/topics/TopicCard';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Router>
         <Home path="/" />
         <ArticlesList path="/articles" />
+        <AllTopics path="/topics" />
         <ArticlesList path="/topics/:topic" />
         <SingleArticle path="/articles/:article_id" />
       </Router>

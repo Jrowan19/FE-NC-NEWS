@@ -3,7 +3,7 @@ import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import axios from 'axios';
 import ArticleCard from './ArticleCard';
 import ErrorMsg from '../../ErrorMsg';
-import TopicCard from '../topics/TopicCard';
+import * as api from '../../api';
 
 class ArticlesList extends Component {
   state = {
@@ -39,17 +39,26 @@ class ArticlesList extends Component {
   }
 
   fetchAllArticles = () => {
-    let url = '';
-    if (this.props.article_id) {
-      url = `https://john-rowan-news.herokuapp.com/api/articles/${
-        this.props.article_id
-      }`;
-    } else url = 'https://john-rowan-news.herokuapp.com/api/articles';
+    let url = 'https://john-rowan-news.herokuapp.com/api/articles';
     axios
       .get(url)
       .then(({ data }) =>
         this.setState({ articles: data.articles, isLoading: false })
       );
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    const { sort_by, topic, order } = this.state;
+    if (
+      prevState.sort_by !== sort_by ||
+      prevState.topic !== topic ||
+      prevState.order !== order
+    ) {
+      const queryObj = { sort_by, order, topic };
+      api
+        .getArticlesWithParams(queryObj)
+        .then(articles => this.setState({ articles }));
+    }
   };
 }
 

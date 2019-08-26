@@ -1,12 +1,36 @@
 import React from 'react';
+import { Link } from '@reach/router';
+//import ArticlesList from './ArticlesList';
+//import ArticleCard from '../articles/ArticleCard';
 
-const TopicsCard = ({ slug, description }) => {
+const TopicCard = props => {
+  const { slug, description } = props.topic;
   return (
-    <article className="row mx-auto mb-5 ">
-      <h2>{slug}</h2>
-      <p>{description}</p>
-    </article>
+    <>
+      <br />
+
+      <section className="row mb-1 ">
+        <li className="card bg-light mx-auto" style={{ width: '50rem' }}>
+          <Link to={`/topics/${slug}`}>
+            <h2 className="card-title text-white text-uppercase bg-primary active">
+              {slug}
+            </h2>
+          </Link>
+          <p className="card-title text-uppercase">
+            Description: {description}
+          </p>
+
+          <Link
+            to={`/topics/${slug}`}
+            className="btn btn-outline-primary text-white text-uppercase bg-primary btn btn-"
+          >
+            Related Articles
+          </Link>
+        </li>
+      </section>
+      <br />
+    </>
   );
 };
 
-export default TopicsCard;
+export default TopicCard;

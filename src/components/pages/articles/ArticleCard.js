@@ -14,8 +14,8 @@ const ArticleCard = props => {
     votes
   } = props.article;
   return (
-    <section className="row mx-auto mb-5 ">
-      <li className="card bg-light" style={{ width: '100rem' }}>
+    <section className="row mx-auto mb-5">
+      <li className="card bg-light mx-auto" style={{ width: '100rem' }}>
         <Link to={`/articles/${article_id}`}>
           <h3 className="card-title text-white text-uppercase bg-primary active">
             {title}

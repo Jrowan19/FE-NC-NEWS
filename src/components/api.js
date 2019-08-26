@@ -4,24 +4,26 @@ const baseURL = 'https://john-rowan-news.herokuapp.com/api/';
 
 export const getData = endpoint => {
   console.log(endpoint);
-  return axios
-    .get(`https://john-rowan-news.herokuapp.com/api/${endpoint}`)
-    .then(({ data }) => {
-      return data;
-    });
+  return axios.get(`${baseURL}/${endpoint}`).then(({ data }) => {
+    return data;
+  });
 };
 
-export const getArticles = (topic, sort_by, order) => {
-  //   const params = { topic: topic, sort_by: sort_by };
-  return axios
-    .get(`${baseURL}/articles`, {
-      params: {
-        topic,
-        sort_by,
-        order
-      }
+export const getAllTopics = () => {
+  return axios.get(`${baseURL}/topics`).then(({ data }) => {
+    return data.topics;
+  });
+};
+
+export const getArticlesWithParams = ({ sort_by, order, topic, author }) => {
+  return axios.get(`${baseURL}/articles`, {
+    params: {
+      sort_by: sort_by,
+      order: order,
+      topic: topic,
+      author: author
+    }.then(({ data: { articles } }) => {
+      return articles;
     })
-    .then(({ data }) => {
-      return data;
-    });
+  });
 };

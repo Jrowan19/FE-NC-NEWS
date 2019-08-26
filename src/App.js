@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <Navbar />
       <br />
+      <br />
       <SignIn />
       <Router>
         <Home path="/" />

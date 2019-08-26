@@ -5,7 +5,7 @@ function SignIn() {
     <form>
       <div className="form-row align-items-center bg-dark mw-150">
         <div className="col-auto">
-          <label className="sr-only" for="inlineFormInput">
+          <label className="sr-only" htmlFor="inlineFormInput">
             Name
           </label>
 
@@ -17,7 +17,7 @@ function SignIn() {
           />
         </div>
         <div className="col-auto">
-          <label className="sr-only" for="inlineFormInputGroup">
+          <label className="sr-only" htmlFor="inlineFormInputGroup">
             Username
           </label>
           <div className="input-group mt-5 mb-2">
@@ -41,7 +41,7 @@ function SignIn() {
             />
             <label
               className="form-check-label text-white"
-              for="autoSizingCheck"
+              htmlFor="autoSizingCheck"
             >
               Remember me
             </label>

@@ -51,17 +51,29 @@ function Footer() {
               <h4> Gallery </h4>
               <ul className="list-unstyled">
                 <li>
-                  <a href="https://www.visitliverpool.com/" target="_blank">
+                  <a
+                    href="https://www.visitliverpool.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
                     Liverpool
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.nycgo.com/" target="_blank">
+                  <a
+                    href="https://www.nycgo.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
                     New York
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.visitlasvegas.com/uk/" target="_blank">
+                  <a
+                    href="https://www.visitlasvegas.com/uk/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
                     Las Vegas
                   </a>
                 </li>

@@ -17,8 +17,7 @@ const Navbar = () => {
         href="https://www.instagram.com/"
         rel="noopener noreferrer"
         target="_blank"
-        className="navbar-brand"
-        className="text-warning ml-2 "
+        className="navbar-brand text-warning ml-2 "
       >
         insta&nbsp;
         <i className="fab fa-instagram" />
@@ -150,7 +149,7 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 ALL TOPICS&nbsp;
-                <i class="fas fa-align-center" />
+                <i className="fas fa-align-center" />
               </a>
 
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">

@@ -9,21 +9,27 @@ export const getData = endpoint => {
   });
 };
 
+export const getAllArticles = () => {
+  return axios.get(`${baseURL}/articles`).then(({ data }) => {
+    return data.articles;
+  });
+};
+
 export const getAllTopics = () => {
   return axios.get(`${baseURL}/topics`).then(({ data }) => {
     return data.topics;
   });
 };
 
-export const getArticlesWithParams = ({ sort_by, order, topic, author }) => {
-  return axios.get(`${baseURL}/articles`, {
-    params: {
-      sort_by: sort_by,
-      order: order,
-      topic: topic,
-      author: author
-    }.then(({ data: { articles } }) => {
-      return articles;
+export const getArticlesWithParams = topic => {
+  console.log(topic);
+  return axios
+    .get(`${baseURL}/articles`, {
+      params: {
+        topic: topic
+      }
     })
-  });
+    .then(({ data }) => {
+      return data.articles;
+    });
 };

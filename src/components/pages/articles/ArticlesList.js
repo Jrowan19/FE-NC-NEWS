@@ -46,20 +46,6 @@ class ArticlesList extends Component {
         this.setState({ articles: data.articles, isLoading: false })
       );
   };
-
-  componentDidUpdate = (prevProps, prevState) => {
-    const { sort_by, topic, order } = this.state;
-    if (
-      prevState.sort_by !== sort_by ||
-      prevState.topic !== topic ||
-      prevState.order !== order
-    ) {
-      const queryObj = { sort_by, order, topic };
-      api
-        .getArticlesWithParams(queryObj)
-        .then(articles => this.setState({ articles }));
-    }
-  };
 }
 
 export default ArticlesList;

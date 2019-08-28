@@ -6,7 +6,7 @@ import ErrorMsg from '../../ErrorMsg';
 
 class SingleArticle extends Component {
   state = {
-    article: null,
+    article: [],
     isLoading: true,
     error: null
   };
@@ -14,7 +14,7 @@ class SingleArticle extends Component {
   render() {
     const { isLoading, article, error } = this.state;
     if (isLoading) return <LoadingSpinner />;
-    if (error) return <ErrorMsg />;
+    if (error) return <ErrorMsg error />;
 
     const {
       author,
@@ -53,6 +53,13 @@ class SingleArticle extends Component {
                 Date posted: {created_at.slice(0, 9)}
               </p>
               <p className="card-body text-uppercase">Body: {body}</p>
+
+              <Link
+                className="btn btn-outline-primary text-white text-uppercase bg-primary btn btn"
+                to={`/comments/${article_id}`}
+              >
+                See Comments
+              </Link>
             </li>
           </section>
         </article>
@@ -77,7 +84,6 @@ class SingleArticle extends Component {
         });
       });
   }
-  
 }
 
 export default SingleArticle;

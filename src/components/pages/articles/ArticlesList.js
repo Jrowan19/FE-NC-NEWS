@@ -3,14 +3,15 @@ import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import axios from 'axios';
 import ArticleCard from './ArticleCard';
 import ErrorMsg from '../../ErrorMsg';
-import * as api from '../../api';
+//import * as api from '../../api';
+//import ArticleComments from '../singleArticle/ArticlesComments';
 
 class ArticlesList extends Component {
   state = {
     articles: [],
-    filterByTopic: '',
-    // sort_by: 'created_at',
-    // order: 'desc',
+    topic: '',
+    sort_by: 'created_at',
+    order: 'desc',
     error: null,
     isLoading: true
   };
@@ -46,6 +47,8 @@ class ArticlesList extends Component {
         this.setState({ articles: data.articles, isLoading: false })
       );
   };
+
+  
 }
 
 export default ArticlesList;

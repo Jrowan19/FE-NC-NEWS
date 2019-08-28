@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as api from '../../api';
-
 import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import ArticleCard from './ArticleCard';
 
@@ -14,16 +13,19 @@ class ArticlesByTopic extends Component {
     const { isLoading, articlesByTopic } = this.state;
     if (isLoading) return <LoadingSpinner />;
     return (
-      <section>
-        {articlesByTopic.map(articleByTopic => {
-          return (
-            <ArticleCard
-              key={articleByTopic.article_id}
-              article={articleByTopic}
-            />
-          );
-        })}
-      </section>
+      <>
+        <br />
+        <section>
+          {articlesByTopic.map(articleByTopic => {
+            return (
+              <ArticleCard
+                key={articleByTopic.article_id}
+                article={articleByTopic}
+              />
+            );
+          })}
+        </section>
+      </>
     );
   }
 

@@ -4,26 +4,8 @@ import { Link } from '@reach/router';
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar fixed-top">
-      <a
-        href="https://twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary "
-      >
-        twitter&nbsp;
-        <i className="fab fa-twitter" />
-      </a>
-      <a
-        href="https://www.instagram.com/"
-        rel="noopener noreferrer"
-        target="_blank"
-        className="navbar-brand text-warning ml-2 "
-      >
-        insta&nbsp;
-        <i className="fab fa-instagram" />
-      </a>
       <Link className="nav-link text-white text-uppercase" to="/">
-        home&nbsp;
+        NC-NEWZ&nbsp;
         <i className="fas fa-hand-middle-finger" />
       </Link>
       <button
@@ -59,7 +41,7 @@ const Navbar = () => {
               {/* <!-- most popular articles/votes etc..... --> */}
 
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <Link className="dropdown-item" to="/articles?topic=cooking">
+                <Link className="dropdown-item" to="/articles">
                   Most Recent
                 </Link>
                 <Link className="dropdown-item" to="/articles?topic=cooking">

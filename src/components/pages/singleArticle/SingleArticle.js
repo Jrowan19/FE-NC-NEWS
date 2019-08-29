@@ -3,6 +3,7 @@ import * as api from '../../api';
 import { Link } from '@reach/router';
 import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import ErrorMsg from '../../ErrorMsg';
+import Voting from '../Voting';
 
 class SingleArticle extends Component {
   state = {
@@ -43,16 +44,21 @@ class SingleArticle extends Component {
                 </h3>
               </Link>
               <p className="card-title text-uppercase">Author: {author}</p>
-              <p className="card-title text-uppercase">Votes: {votes}</p>
+              <p className="card-title text-uppercase" />
               <p className="card-title text-uppercase">Topic: {topic}</p>
               <p className="card-title text-uppercase">
                 Comment count: {comment_count}
               </p>
-              <p className="card-title text-uppercase">Votes: {votes}</p>
+
               <p className="card-title text-uppercase">
                 Date posted: {created_at.slice(0, 9)}
               </p>
               <p className="card-body text-uppercase">Body: {body}</p>
+              <Voting
+                votes={votes}
+                article_id={article_id}
+                username={this.props.username}
+              />
 
               <Link
                 className="btn btn-outline-primary text-white text-uppercase bg-primary btn btn"

@@ -3,6 +3,7 @@ import * as api from '../../api';
 import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import { Link } from '@reach/router';
 import CommentAdder from './CommentAdder';
+import Voting from '../Voting';
 
 class ArticleComments extends Component {
   state = {
@@ -12,11 +13,13 @@ class ArticleComments extends Component {
   };
   render() {
     const { isLoading, comments, article } = this.state;
+    const { votes, comment_id, author, username } = this.props;
     if (article === null) return <LoadingSpinner />;
     if (isLoading) return <LoadingSpinner />;
     return (
       <>
         <br />
+
         <CommentAdder
           username={this.props.username}
           article_id={this.props.article_id}
@@ -37,24 +40,34 @@ class ArticleComments extends Component {
                 <p className="card-title text-uppercase">
                   Author: {comment.author}
                 </p>
+
                 <p className="card-title text-uppercase ">
-                  Votes: {comment.votes}
+                  Comment id: {comment.comment_id}
                 </p>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => {
-                    if (
-                      window.confirm(
-                        'Are you sure you wish to delete this item?'
+                <Voting
+                  votes={comment.votes}
+                  comment_id={comment.comment_id}
+                  author={comment.author}
+                  username={username}
+                />
+                {username === comment.author && (
+                  <button
+                    type="button"
+                    className="btn btn-primary mx-auto"
+                    style={{ width: '10rem' }}
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          'Are you sure you wish to delete this item?'
+                        )
                       )
-                    )
-                      this.removeComment(comment.comment_id);
-                  }}
-                >
-                  {' '}
-                  Delete Comment{' '}
-                </button>
+                        this.removeComment(comment.comment_id);
+                    }}
+                  >
+                    {' '}
+                    Delete Comment{' '}
+                  </button>
+                )}
               </li>
             </section>
           );
@@ -76,9 +89,7 @@ class ArticleComments extends Component {
   }
 
   addComment = comment => {
-    console.log(comment);
     const { article_id, username } = this.props;
-    console.log(article_id, username);
     api.postComment(article_id, comment, { username }).then(newComment => {
       this.setState(({ comments }) => {
         return { comments: [newComment, ...comments] };

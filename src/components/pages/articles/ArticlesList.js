@@ -3,6 +3,8 @@ import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import axios from 'axios';
 import ArticleCard from './ArticleCard';
 import ErrorMsg from '../../ErrorMsg';
+import Voting from '../Voting';
+import Sorter from '../Sorter';
 //import * as api from '../../api';
 //import ArticleComments from '../singleArticle/ArticlesComments';
 
@@ -18,11 +20,14 @@ class ArticlesList extends Component {
 
   render() {
     const { articles, isLoading, error } = this.state;
+
     if (isLoading) return <LoadingSpinner />;
     if (error) return <ErrorMsg />;
 
     return (
       <>
+        <Sorter fetchAllArticles={this.fetchAllArticles} />
+
         <br />
 
         <div className="container">
@@ -34,6 +39,8 @@ class ArticlesList extends Component {
       </>
     );
   }
+
+  //add sorter into gameslist
 
   componentDidMount() {
     this.fetchAllArticles();
@@ -47,8 +54,6 @@ class ArticlesList extends Component {
         this.setState({ articles: data.articles, isLoading: false })
       );
   };
-
-  
 }
 
 export default ArticlesList;

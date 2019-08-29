@@ -63,11 +63,23 @@ export const postComment = (article_id, body, { username }) => {
 };
 
 export const deleteComment = comment_id => {
-  console.log(comment_id);
   return axios
     .delete(`${baseURL}/comments/${comment_id}`, { comment_id })
     .then(({ data }) => {
       console.log(data);
       return data.comment;
     });
+};
+
+// export const updateVotes = (article_id, comment_id, inc_votes) => {
+//   console.log(article_id, comment_id, inc_votes);
+//   return axios.patch(`${baseURL}/comments/${comment_id}`, { inc_votes });
+// };
+
+export const updateVotes = (article_id, comment_id, inc_votes) => {
+  console.log(article_id);
+  const URL = article_id
+    ? `${baseURL}/articles/${article_id}`
+    : `${baseURL}/comments/${comment_id}`;
+  return axios.patch(URL, { inc_votes });
 };

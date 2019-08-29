@@ -1,9 +1,27 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar fixed-top">
+      <form className="form-row align-items-center bg-dark ">
+        <div className="dropdown ml-3 mt-3 mb-2">
+          <select
+            className="btn btn-primary dropdown-toggle"
+            type="text"
+            name="username"
+            value={props.username}
+            onChange={props.handleUserChange}
+          >
+            <option value="jessjelly"> jessjelly</option>
+            <option value="cooljmessy">cooljmessy</option>
+            <option value="tickle122"> tickle122</option>
+          </select>
+        </div>
+        <p className="text-white  mb-2">
+          <i className="fas fa-user" /> Logged in as {props.username}
+        </p>
+      </form>
       <Link className="nav-link text-white text-uppercase" to="/">
         NC-NEWZ&nbsp;
         <i className="fas fa-hand-middle-finger" />

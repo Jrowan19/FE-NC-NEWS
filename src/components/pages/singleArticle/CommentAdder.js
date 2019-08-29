@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as api from '../../api';
 
 class CommentAdder extends Component {
   state = {
@@ -7,6 +6,7 @@ class CommentAdder extends Component {
   };
   render() {
     const { body } = this.state;
+
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="form-group mx-auto" style={{ width: '50rem' }}>

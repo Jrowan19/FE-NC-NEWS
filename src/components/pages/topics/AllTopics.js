@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { getAllTopics } from '../../api';
-import TopicCard from '../topics/TopicCard';
+
 import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
+import { Link } from '@reach/router';
 
 class AllTopics extends Component {
   state = {
@@ -15,11 +16,28 @@ class AllTopics extends Component {
     return (
       <div>
         {topics.map(topic => {
-          return <TopicCard topic={topic} key={topic.slug} />;
+          return (
+            <div class="card">
+              <img src="..." class="card-img-top" alt="..." />
+              <div class="card-body">
+                <Link to={`/topics/${topic.slug}`}>
+                  <h5 class="card-title">Card title</h5>
+                </Link>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">
+                  View Articles
+                </a>
+              </div>
+            </div>
+          );
         })}
       </div>
     );
   }
+  // <TopicCard topic={topic} key={topic.slug} />;
 
   componentDidMount = () => {
     this.fetchAllTopics();

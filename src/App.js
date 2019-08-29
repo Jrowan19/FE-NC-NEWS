@@ -23,16 +23,17 @@ class App extends Component {
     const { username } = this.state;
     return (
       <div className="App">
-        <Navbar />
+        <Navbar username={username} handleUserChange={this.handleUserChange} />
+        <br />
+        <br />
         <br />
         <br />
         <br />
 
-        <Header username={username} handleUserChange={this.handleUserChange} />
         <Router>
           <Home path="/" />
           <ArticlesList path="/articles" />
-          <SingleArticle path="/articles/:article_id" />
+          <SingleArticle path="/articles/:article_id" username={username} />
           <AllTopics path="/topics" />
           <ArticlesByTopic path="/topics/:topic" />
           <ArticleComments path="/comments/:article_id" username={username} />

@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import * as api from '../../api';
 import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import ArticleCard from './ArticleCard';
+import ErrorMsg from '../../ErrorMsg';
 
 class ArticlesByTopic extends Component {
   state = {
     articlesByTopic: [],
-    isLoading: true
+    isLoading: true,
+    error: null
   };
 
   render() {
-    const { isLoading, articlesByTopic } = this.state;
+    const { isLoading, articlesByTopic, error } = this.state;
+    if (error) return <ErrorMsg error={error} />;
     if (isLoading) return <LoadingSpinner />;
     return (
       <>
@@ -41,10 +44,14 @@ class ArticlesByTopic extends Component {
 
   fetchAllArticles = () => {
     const { topic, sort_by, order } = this.props;
-    api.getArticlesWithParams(topic, sort_by, order).then(articles => {
-      // access to articles to set the state
-      this.setState({ articlesByTopic: articles, isLoading: false });
-    });
+    api
+      .getArticlesWithParams(topic, sort_by, order)
+      .then(articles => {
+        this.setState({ articlesByTopic: articles, isLoading: false });
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
   };
 }
 

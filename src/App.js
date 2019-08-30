@@ -11,8 +11,6 @@ import SingleArticle from './components/pages/singleArticle/SingleArticle';
 import AllTopics from './components/pages/topics/AllTopics';
 import ArticlesByTopic from './components/pages/articles/ArticlesByTopic';
 import ArticleComments from './components/pages/singleArticle/ArticleComments';
-//import User from './components/pages/user/User';
-import Header from './components/layouts/Header';
 
 class App extends Component {
   state = {

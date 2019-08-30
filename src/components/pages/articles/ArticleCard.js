@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import Voting from '../Voting';
 
 const ArticleCard = props => {
   const {
@@ -27,12 +26,11 @@ const ArticleCard = props => {
         <p className="card-title text-uppercase text-white">Votes: {votes}</p>
 
         <p className="card-title text-uppercase text-white">
-          Date Posted {new Date(created_at).toLocaleString()}
+          Date Posted: {new Date(created_at).toLocaleString()}
         </p>
         <p className="card-body text-uppercase text-white">Body: {body}</p>
         <p className="card-title text-uppercase text-white ">
-         
-          <i className="fas fa-comment-alt text-white" />  {''} {comment_count}
+          <i className="fas fa-comment-alt text-white" /> {''} {comment_count}
         </p>
         <Link
           to={`/articles/${article_id}`}

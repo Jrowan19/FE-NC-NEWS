@@ -18,13 +18,13 @@ const Navbar = props => {
             <option value="tickle122"> tickle122</option>
           </select>
         </div>
-        <p className="text-white  mb-2">
+        <p className="text-white ml-3 mt-3 mb-2">
           <i className="fas fa-user" /> Logged in as {props.username}
         </p>
       </form>
-      <Link className="nav-link text-white text-uppercase" to="/">
+      <Link className="nav-link text-white text-uppercase mr-8 n" to="/">
         NC-NEWZ&nbsp;
-        <i class="fas fa-user-ninja" />
+        <i className="fas fa-user-ninja" />
       </Link>
       <button
         className="navbar-toggler"

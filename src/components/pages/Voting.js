@@ -16,13 +16,21 @@ class Voting extends Component {
             className="btn btn-light btn-sm mx-auto"
             style={{ width: '10rem' }}
             onClick={() => this.updateVotes(1)}
-            disabled={voteChange === 1}
+            disabled={voteChange >= 1}
           >
             <i className="fas fa-thumbs-up" />
           </button>
         )}
-
-        <p className="text-white">VOTES: {votes + voteChange}</p>
+        {/* <button type="button" class="btn btn-primary">
+  Notifications <span class="badge badge-light">4</span>
+</button> */}
+        <button
+          type="button"
+          className="btn btn-dark mx-auto"
+          style={{ width: '10rem' }}
+        >
+          VOTES <span class="badge badge-light">{votes + voteChange}</span>
+        </button>
         {username && username !== author && (
           <button
             className="btn btn-light btn-sm mx-auto"
@@ -40,7 +48,6 @@ class Voting extends Component {
   updateVotes = inc_votes => {
     console.log(inc_votes);
     const { article_id, comment_id } = this.props;
-    console.log(this.props);
     api.updateVotes(article_id, comment_id, inc_votes).catch(error => {
       console.log(comment_id);
       this.setState(({ voteChange }) => {

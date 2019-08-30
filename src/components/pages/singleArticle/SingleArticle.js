@@ -15,7 +15,7 @@ class SingleArticle extends Component {
   render() {
     const { isLoading, article, error } = this.state;
     if (isLoading) return <LoadingSpinner />;
-    if (error) return <ErrorMsg error />;
+    if (error) return <ErrorMsg error={error} />;
 
     const {
       author,

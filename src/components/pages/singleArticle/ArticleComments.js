@@ -4,16 +4,19 @@ import LoadingSpinner from '../../addedExtras.js/LoadingSpinner';
 import { Link } from '@reach/router';
 import CommentAdder from './CommentAdder';
 import Voting from '../Voting';
+import ErrorMsg from '../../ErrorMsg';
 
 class ArticleComments extends Component {
   state = {
     comments: null,
     article: null,
-    isLoading: true
+    isLoading: true,
+    error: null
   };
   render() {
-    const { isLoading, comments, article } = this.state;
+    const { isLoading, comments, article, error } = this.state;
     const { username } = this.props;
+    if (error) return <ErrorMsg error={error} />;
     if (article === null) return <LoadingSpinner />;
     if (isLoading) return <LoadingSpinner />;
     return (
@@ -41,9 +44,6 @@ class ArticleComments extends Component {
                   {comment.body}
                 </p>
 
-                <p className="card-title text-uppercase text-white">
-                  Comment id: {comment.comment_id}
-                </p>
                 <br />
                 <Voting
                   votes={comment.votes}

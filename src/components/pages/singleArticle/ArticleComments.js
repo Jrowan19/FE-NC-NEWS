@@ -13,7 +13,7 @@ class ArticleComments extends Component {
   };
   render() {
     const { isLoading, comments, article } = this.state;
-    const { votes, comment_id, author, username } = this.props;
+    const { username } = this.props;
     if (article === null) return <LoadingSpinner />;
     if (isLoading) return <LoadingSpinner />;
     return (
@@ -28,32 +28,35 @@ class ArticleComments extends Component {
 
         {comments.map(comment => {
           return (
-            <section className="row mx-auto mb-5" key={comment.comment_id}>
-              <li className="card bg-light mx-auto" style={{ width: '50rem' }}>
+            <section className="row mx-auto mb-5 " key={comment.comment_id}>
+              <li className="card bg-dark mx-auto " style={{ width: '50rem' }}>
                 <Link to={`/comments/${this.props.article_id}`}>
-                  <h3 className="card-title text-white text-uppercase bg-primary active">
+                  <h3 className="card-title text-white text-uppercase bg-primary active text-white">
+                    {comment.author}{' '}
                     {new Date(comment.created_at).toLocaleString()}
                   </h3>
                 </Link>
-
-                <p className="card-title text-uppercase">{comment.body}</p>
-                <p className="card-title text-uppercase">
-                  Author: {comment.author}
+                <p className="card-title text-uppercase text-white" />
+                <p className="card-title text-uppercase text-white">
+                  {comment.body}
                 </p>
 
-                <p className="card-title text-uppercase ">
+                <p className="card-title text-uppercase text-white">
                   Comment id: {comment.comment_id}
                 </p>
+                <br />
                 <Voting
                   votes={comment.votes}
                   comment_id={comment.comment_id}
                   author={comment.author}
                   username={username}
                 />
+                <br />
+
                 {username === comment.author && (
                   <button
                     type="button"
-                    className="btn btn-primary mx-auto"
+                    className="btn btn-danger mx-auto"
                     style={{ width: '10rem' }}
                     onClick={() => {
                       if (
@@ -107,5 +110,4 @@ class ArticleComments extends Component {
     });
   };
 }
-
 export default ArticleComments;

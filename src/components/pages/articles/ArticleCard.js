@@ -15,29 +15,31 @@ const ArticleCard = props => {
   } = props.article;
   return (
     <section className="row mx-auto mb-5">
-      <li className="card bg-light mx-auto" style={{ width: '50rem' }}>
+      <li className="card bg-dark mx-auto" style={{ width: '50rem' }}>
         <Link to={`/articles/${article_id}`}>
           <h3 className="card-title text-white text-uppercase bg-primary active">
             {title}
           </h3>
         </Link>
-        <p className="card-title text-uppercase">Author: {author}</p>
-        <p className="card-title text-uppercase">Topic: {topic}</p>
-        <p className="card-title text-uppercase">
-          Comment count: {comment_count}
-        </p>
-        <p className="card-title text-uppercase">Votes: {votes}</p>
-        
-        <p className="card-title text-uppercase">
+        <p className="card-title text-uppercase text-white">Author: {author}</p>
+        <p className="card-title text-uppercase text-white">Topic: {topic}</p>
+
+        <p className="card-title text-uppercase text-white">Votes: {votes}</p>
+
+        <p className="card-title text-uppercase text-white">
           Date Posted {new Date(created_at).toLocaleString()}
         </p>
-        <p className="card-body text-uppercase">Body: {body}</p>
+        <p className="card-body text-uppercase text-white">Body: {body}</p>
+        <p className="card-title text-uppercase text-white ">
+         
+          <i className="fas fa-comment-alt text-white" />  {''} {comment_count}
+        </p>
         <Link
           to={`/articles/${article_id}`}
           className="btn btn-outline-primary text-white text-uppercase bg-primary btn btn- mx-auto"
           style={{ width: '10rem' }}
         >
-          More Info
+          See Article
         </Link>
       </li>
     </section>

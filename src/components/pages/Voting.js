@@ -13,20 +13,24 @@ class Voting extends Component {
       <>
         {username && username !== author && (
           <button
+            className="btn btn-light btn-sm mx-auto"
+            style={{ width: '10rem' }}
             onClick={() => this.updateVotes(1)}
             disabled={voteChange === 1}
           >
-            Vote Up
+            <i className="fas fa-thumbs-up" />
           </button>
         )}
 
-        <p>VOTES: {votes + voteChange}</p>
+        <p className="text-white">VOTES: {votes + voteChange}</p>
         {username && username !== author && (
           <button
+            className="btn btn-light btn-sm mx-auto"
+            style={{ width: '10rem' }}
             onClick={() => this.updateVotes(-1)}
             disabled={voteChange === -1}
           >
-            Vote Down
+            <i className="fas fa-thumbs-down" />
           </button>
         )}
       </>

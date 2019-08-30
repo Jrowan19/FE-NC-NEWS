@@ -7,7 +7,7 @@
 }
 
 .Home {
-  background: url(http://www.attachmax.com/p/2018/11/newspaper-background-for-your-newspaper-template-for-dana-regarding-newspaper-background-template.jpg);
+  background: url(https://wallpapercave.com/wp/wp3998720.jpg);
 }
 
 ul {
@@ -42,12 +42,6 @@ input[type='text'] {
   border: 2px solid #ccc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-}
-
-body {
-  background-image: (
-    url('https://i.ytimg.com/vi/QHC53DrsEjY/maxresdefault.jpg')
-  );
 }
 
 .dropdown-content {
@@ -106,3 +100,7 @@ ul li a:hover {
   align-content: space-around;
   justify-content: center;
 } */
+
+.bg {
+  background-image: url('https://i.pinimg.com/originals/a0/e4/ff/a0e4ffd97de87d07f3ed020e07aae0bb.jpg');
+}

@@ -84,7 +84,7 @@ function Footer() {
           <div className="footer-bottom">
             <p className="text-xs-center">
               &copy;{new Date().getFullYear()} J Rowan &nbsp;
-              <i className="fas fa-hand-middle-finger" /> - All Rights Reserved
+              <i class="fas fa-user-ninja" /> - All Rights Reserved
             </p>
           </div>
         </div>

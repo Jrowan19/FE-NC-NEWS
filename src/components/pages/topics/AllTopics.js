@@ -23,10 +23,7 @@ class AllTopics extends Component {
                 <Link to={`/topics/${topic.slug}`}>
                   <h5 class="card-title">Card title</h5>
                 </Link>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <p class="card-text">topic text</p>
                 <a href="#" class="btn btn-primary">
                   View Articles
                 </a>

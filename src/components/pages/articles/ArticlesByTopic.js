@@ -40,7 +40,9 @@ class ArticlesByTopic extends Component {
   };
 
   fetchAllArticles = () => {
-    api.getArticlesWithParams(this.props.topic).then(articles => {  // access to articles to set the state 
+    const { topic, sort_by, order } = this.props;
+    api.getArticlesWithParams(topic, sort_by, order).then(articles => {
+      // access to articles to set the state
       this.setState({ articlesByTopic: articles, isLoading: false });
     });
   };

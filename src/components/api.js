@@ -9,7 +9,7 @@ export const getData = endpoint => {
   });
 };
 
-export const getAllArticles = () => {
+export const getAllArticles = (topic, sort_by, order) => {
   return axios.get(`${baseURL}/articles`).then(({ data }) => {
     return data.articles;
   });
@@ -22,7 +22,6 @@ export const getAllTopics = () => {
 };
 
 export const getArticlesWithParams = (topic, sort_by, order) => {
-  console.log(topic);
   return axios
     .get(`${baseURL}/articles`, {
       params: {

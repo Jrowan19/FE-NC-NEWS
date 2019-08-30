@@ -24,7 +24,7 @@ const Navbar = props => {
       </form>
       <Link className="nav-link text-white text-uppercase" to="/">
         NC-NEWZ&nbsp;
-        <i className="fas fa-hand-middle-finger" />
+        <i class="fas fa-user-ninja" />
       </Link>
       <button
         className="navbar-toggler"

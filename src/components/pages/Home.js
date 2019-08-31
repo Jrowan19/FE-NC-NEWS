@@ -16,7 +16,7 @@ function Home() {
           className="carousel slide"
           data-ride="carousel"
         >
-          <ol className="carousel-indicators">
+          <ol className="carousel-indicators ">
             <li
               data-target="#carouselExampleCaptions"
               data-slide-to="0"

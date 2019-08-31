@@ -8,14 +8,18 @@ class CommentAdder extends Component {
     const { body } = this.state;
 
     return (
-      <form className="row mx-auto" onSubmit={this.handleSubmit} >
+      <form className="row mx-auto Home" onSubmit={this.handleSubmit}>
         <div className="form-group mx-auto" style={{ width: '50rem' }}>
-          <span className="badge badge-primary badge badge-lg">Comments</span>
+          <span className="badge badge-primary badge badge-lg mt-4">
+            Comments
+          </span>
 
           <textarea
-            className="form-control"
+            className="form-control mt-1"
+            style={{ height: '8rem' }}
             type="text"
             name="body"
+            placeholder="Add comment here"
             id="body"
             minLength="1"
             required

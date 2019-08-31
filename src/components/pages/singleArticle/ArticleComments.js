@@ -21,8 +21,6 @@ class ArticleComments extends Component {
     if (isLoading) return <LoadingSpinner />;
     return (
       <>
-        <br />
-
         <CommentAdder
           username={this.props.username}
           article_id={this.props.article_id}
@@ -31,48 +29,52 @@ class ArticleComments extends Component {
 
         {comments.map(comment => {
           return (
-            <section className="row mx-auto mb-5 " key={comment.comment_id}>
-              <li className="card bg-dark mx-auto " style={{ width: '50rem' }}>
-                <Link to={`/comments/${this.props.article_id}`}>
-                  <h3 className="card-title text-white text-uppercase bg-primary active text-white">
-                    {comment.author}{' '}
-                    {new Date(comment.created_at).toLocaleString()}
-                  </h3>
-                </Link>
-                <p className="card-title text-uppercase text-white" />
-                <p className="card-title text-uppercase text-white">
-                  {comment.body}
-                </p>
+            <div >
+              <section className=" mx-auto Home" key={comment.comment_id}>
+                <div
+                  className="card bg-dark mx-auto "
+                  style={{ width: '50rem' }}
+                >
+                  <Link to={`/comments/${this.props.article_id}`}>
+                    <h3 className="card-title text-white text-uppercase bg-primary active text-white">
+                      {comment.author}{' '}
+                      {new Date(comment.created_at).toLocaleString()}
+                    </h3>
+                  </Link>
+                  <p className="card-title text-uppercase text-white" />
+                  <p className="card-title text-uppercase text-white">
+                    {comment.body}
+                  </p>
 
-                <br />
-                <Voting
-                  votes={comment.votes}
-                  comment_id={comment.comment_id}
-                  author={comment.author}
-                  username={username}
-                />
-                <br />
+                  <Voting
+                    votes={comment.votes}
+                    comment_id={comment.comment_id}
+                    author={comment.author}
+                    username={username}
+                  />
 
-                {username === comment.author && (
-                  <button
-                    type="button"
-                    className="btn btn-danger mx-auto"
-                    style={{ width: '10rem' }}
-                    onClick={() => {
-                      if (
-                        window.confirm(
-                          'Are you sure you wish to delete this item?'
+                  {username === comment.author && (
+                    <button
+                      type="button"
+                      className="btn btn-danger mx-auto"
+                      style={{ width: '10rem' }}
+                      onClick={() => {
+                        if (
+                          window.confirm(
+                            'Are you sure you wish to delete this item?'
+                          )
                         )
-                      )
-                        this.removeComment(comment.comment_id);
-                    }}
-                  >
-                    {' '}
-                    Delete Comment{' '}
-                  </button>
-                )}
-              </li>
-            </section>
+                          this.removeComment(comment.comment_id);
+                      }}
+                    >
+                      {' '}
+                      Delete Comment{' '}
+                    </button>
+                  )}
+                </div>
+              </section>
+            </div>
+            
           );
         })}
       </>

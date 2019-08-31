@@ -16,7 +16,7 @@ class AllTopics extends Component {
     if (error) return <ErrorMsg error={error} />;
     if (isLoading) return <LoadingSpinner />;
     return (
-      <div className="row mx-auto sitewrapper">
+      <div className="row mx-auto sitewrapper Home">
         {topics.map(topic => {
           return (
             <ul

@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 
 const Navbar = props => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar fixed-top sitewrapper">
       <form className="form-row align-items-center bg-dark ">
         <div className="dropdown ml-3 mt-3 mb-2">
           <select

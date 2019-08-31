@@ -67,13 +67,7 @@ export const deleteComment = comment_id => {
     });
 };
 
-// export const updateVotes = (article_id, comment_id, inc_votes) => {
-//   console.log(article_id, comment_id, inc_votes);
-//   return axios.patch(`${baseURL}/comments/${comment_id}`, { inc_votes });
-// };
-
 export const updateVotes = (article_id, comment_id, inc_votes) => {
-  console.log(article_id);
   const URL = article_id
     ? `${baseURL}/articles/${article_id}`
     : `${baseURL}/comments/${comment_id}`;

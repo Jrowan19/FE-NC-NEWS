@@ -24,8 +24,11 @@ class ArticlesList extends Component {
 
     return (
       <>
+        <br />
         <h3 className="text-white">Sort those Articles</h3>
+
         <Sorter fetchAllArticles={this.fetchAllArticles} />
+        <br />
 
         <div className="container mt-1">
           <div className="row" />

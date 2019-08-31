@@ -8,7 +8,7 @@ class CommentAdder extends Component {
     const { body } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="row mx-auto" onSubmit={this.handleSubmit} >
         <div className="form-group mx-auto" style={{ width: '50rem' }}>
           <span className="badge badge-primary badge badge-lg">Comments</span>
 

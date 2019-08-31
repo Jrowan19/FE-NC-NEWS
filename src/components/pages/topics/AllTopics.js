@@ -19,11 +19,14 @@ class AllTopics extends Component {
       <div className="row mx-auto sitewrapper">
         {topics.map(topic => {
           return (
-            <ul className=" row card mb-3 mx-auto" style={{ width: '540px' }}>
+            <ul
+              className=" row card mb-3 mx-auto bg-dark text-white"
+              style={{ width: '540px' }}
+            >
               <li className="row no-gutters">
                 <div class="col-md-4">
                   <img
-                    src="https://thumbs.dreamstime.com/t/header-banner-3589701.jpg"
+                    src="https://pbs.twimg.com/profile_images/728482145082073088/lp46310N_400x400.jpg"
                     className="card img-fluid"
                     style={{ height: '10rem' }}
                     alt="..."

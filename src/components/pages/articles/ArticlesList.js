@@ -24,9 +24,10 @@ class ArticlesList extends Component {
 
     return (
       <>
+        <h3 className="text-white">Sort those Articles</h3>
         <Sorter fetchAllArticles={this.fetchAllArticles} />
 
-        <div className="container sitewrapper">
+        <div className="container mt-1">
           <div className="row" />
           {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;

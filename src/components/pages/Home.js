@@ -5,10 +5,11 @@ import { Link } from '@reach/router';
 function Home() {
   return (
     <div className="Home jr">
+      <br/>
       <br />
       <br/>
       <br/>
-      <h3 className="text-white">Sort those Articles</h3>
+      
       <div className="bd-example">
         <div
           id="carouselExampleCaptions"

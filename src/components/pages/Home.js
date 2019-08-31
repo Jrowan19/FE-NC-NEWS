@@ -4,13 +4,13 @@ import { Link } from '@reach/router';
 
 function Home() {
   return (
-    <div className="Home jr">
-      <br/>
+    <div className="Home jr sitewrapper">
       <br />
-      <br/>
-      <br/>
-      
-      <div className="bd-example">
+      <br />
+      <br />
+      <br />
+
+      <div className="bd-example ">
         <div
           id="carouselExampleCaptions"
           className="carousel slide"

@@ -18,7 +18,7 @@ class ArticlesByTopic extends Component {
     return (
       <>
         <br />
-        <section>
+        <section className="sitewrapper">
           {articlesByTopic.map(articleByTopic => {
             return (
               <ArticleCard

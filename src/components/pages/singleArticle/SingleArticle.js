@@ -35,8 +35,8 @@ class SingleArticle extends Component {
         <br />
         <br />
 
-        <article>
-          <section className="row mx-auto mb-5 ">
+        <article className="sitewrapper">
+          <section className="row mx-auto mb-5 sitewrapper  ">
             <li className="card bg-dark mx-auto" style={{ width: '70rem' }}>
               <Link to={`/articles/${article_id}`}>
                 <h3 className="card-title text-white text-uppercase bg-primary active">

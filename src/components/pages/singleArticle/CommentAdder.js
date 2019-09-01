@@ -15,7 +15,7 @@ class CommentAdder extends Component {
           </span>
 
           <textarea
-            className="form-control mt-1"
+            className="form-control mt-1 bg-dark"
             style={{ height: '8rem' }}
             type="text"
             name="body"

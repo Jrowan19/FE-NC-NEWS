@@ -3,6 +3,7 @@ import axios from 'axios';
 const baseURL = 'https://john-rowan-news.herokuapp.com/api';
 
 export const getData = endpoint => {
+  console.log(endpoint);
   return axios.get(`${baseURL}/${endpoint}`).then(({ data }) => {
     return data;
   });

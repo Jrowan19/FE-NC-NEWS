@@ -25,7 +25,7 @@ class ArticleComments extends Component {
           username={this.props.username}
           article_id={this.props.article_id}
           addComment={this.addComment}
-          className="mt-1"
+          className="stylewrapper"
         />
 
         {comments.map(comment => {
